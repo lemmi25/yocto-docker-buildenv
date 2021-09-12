@@ -32,11 +32,11 @@ ENV YOCTO_RELEASE "hardknott"
                                                                                  
 # Install Poky                                                                   
 RUN git clone --branch ${YOCTO_RELEASE} git://git.yoctoproject.org/poky          
-RUN cd  
-RUN git clone --branch ${YOCTO_RELEASE} opt/yocto/poky/https://github.com/openembedded/meta-openembedded.git        
-RUN git clone --branch ${YOCTO_RELEASE} opt/yocto/poky/https://github.com/agherzan/meta-raspberrypi.git
+RUN git clone --branch ${YOCTO_RELEASE} https://github.com/openembedded/meta-openembedded.git       
+RUN git clone --branch ${YOCTO_RELEASE} https://github.com/agherzan/meta-raspberrypi.git
 
-             
-                                                                                 
+RUN source poky/oe-init-build-env /home/build
+
+                                                                              
 # Make /home/build the working directory                                         
 WORKDIR /home/build 
