@@ -11,19 +11,28 @@ $ docker build --tag test .
 
 Start the container 
 
-´´´
+```
 $ docker run -itd test:latest 
-´´´
+```
 
 Jump into container with shell
 
-´´´
-$ docker exec -it <mycontainer> bash
-´´´
+```
+$ docker exec -it <my container name> bash
+```
 
-# Usefull commands to copy from container to local machine
+Build 
+
+```
+$ source /opt/yocto/poky/oe-init-build-env /home/build
+$ bitbake core-image-base
+```
+
+Usefull commands to copy from container to local machine
+
 ```
 docker cp <container>:<src-path> <local-dest-path> 
 docker cp <src-path> <container>:<dest-path> 
+docker ps
 ```
 
