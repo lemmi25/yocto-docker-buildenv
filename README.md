@@ -6,13 +6,13 @@ Conf Folder holds layer information that can be modified of use and will be copi
 In currenrt direcotry build the image:
 
 ```
-$ docker build --tag test .
+$ docker build --tag rpi_yocto .
 ```
 
 Start the container 
 
 ```
-$ docker run -itd test:latest 
+$ docker run -itd rpi_yocto 
 ```
 
 Jump into container with shell
