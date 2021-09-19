@@ -1,21 +1,29 @@
 How To Run Docker for Yocto Build
 =================================
 
-In currenrt direcotry run:
+Conf Folder holds layer information that can be modified of use and will be copied to the docker image.
+
+In currenrt direcotry build the image:
 
 ```
-$ docker build
+$ docker build --tag test .
 ```
 
-We have to store under /tmp to comply with Apples filesystem
-```
-$ sudo install -o 1000 -g 1000 -d /tmp/yocto
-$ cd /tmp/yocto
-$ docker run -it --rm -v $PWD:/home/build yocto
-```
+Start the container 
 
-# Usefull commands 
+´´´
+$ docker run -itd test:latest 
+´´´
+
+Jump into container with shell
+
+´´´
+$ docker exec -it <mycontainer> bash
+´´´
+
+# Usefull commands to copy from container to local machine
 ```
-docker exec -it <mycontainer> bash
+docker cp <container>:<src-path> <local-dest-path> 
+docker cp <src-path> <container>:<dest-path> 
 ```
 
