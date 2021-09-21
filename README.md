@@ -33,6 +33,7 @@ Usefull commands to copy from container to local machine
 ```
 docker cp <container>:<src-path> <local-dest-path> 
 docker cp <src-path> <container>:<dest-path> 
+ocker cp <container>:/home/build/tmp/deploy/images/raspberrypi3 /path of choice
 docker ps
 ```
 
