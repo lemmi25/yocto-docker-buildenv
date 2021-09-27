@@ -31,6 +31,8 @@ ENV YOCTO_RELEASE "hardknott"
 RUN git clone --branch ${YOCTO_RELEASE} git://git.yoctoproject.org/poky          
 RUN git clone --branch ${YOCTO_RELEASE} https://github.com/openembedded/meta-openembedded.git       
 RUN git clone --branch ${YOCTO_RELEASE} https://github.com/agherzan/meta-raspberrypi.git
+RUN git clone --branch ${YOCTO_RELEASE} https://github.com/rauc/meta-rauc.git
+RUN git clone --branch ${YOCTO_RELEASE} https://github.com/leon-anavi/meta-rauc-community.git
 
 RUN source poky/oe-init-build-env /home/build
 
@@ -38,7 +40,7 @@ ADD ./conf $HOME/home/build/conf
 ADD ./custom-layer $HOME/home/custom-layer
 
 USER root
-RUN chown build:build /home/custom-layer
+RUN chown build:build /home/custom-layer/*
 RUN chown build:build /home/build/conf/*
 USER build
 
