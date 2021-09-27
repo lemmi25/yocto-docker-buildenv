@@ -10,22 +10,19 @@ RUN apt-get -y install locales apt-utils sudo && dpkg-reconfigure locales && loc
 ENV LANG en_US.utf8                                                              
                                                                                  
 # Clean up APT when done.                                                        
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*               
-                                                                                 
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*  
+                                                                         
 # Replace dash with bash                                                         
 RUN rm /bin/sh && ln -s bash /bin/sh                                        
                                                                                  
 # User management                                                                
 RUN groupadd -g 1000 build && useradd -u 1000 -g 1000 -ms /bin/bash build && usermod -a -G sudo build && usermod -a -G users build 
                                                                                  
-# Install repo                                                                   
-RUN curl -o /usr/local/bin/repo https://storage.googleapis.com/git-repo-downloads/repo && chmod a+x /usr/local/bin/repo 
-                                                                                 
 # Run as build user from the installation path                                   
 ENV YOCTO_INSTALL_PATH "/opt/yocto"                                              
 RUN install -o 1000 -g 1000 -d $YOCTO_INSTALL_PATH                               
 USER build                                                                       
-WORKDIR ${YOCTO_INSTALL_PATH}                                                    
+WORKDIR ${YOCTO_INSTALL_PATH}   
                                                                                  
 # Set the Yocto release                                                          
 ENV YOCTO_RELEASE "hardknott"                                                         
@@ -38,7 +35,13 @@ RUN git clone --branch ${YOCTO_RELEASE} https://github.com/agherzan/meta-raspber
 RUN source poky/oe-init-build-env /home/build
 
 ADD ./conf $HOME/home/build/conf
+ADD ./custom-layer $HOME/home/custom-layer
 
-                                                                              
+USER root
+RUN chown build:build /home/custom-layer
+RUN chown build:build /home/build/conf/*
+USER build
+
 # Make /home/build the working directory                                         
 WORKDIR /home/build 
+
