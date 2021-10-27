@@ -32,7 +32,7 @@ RUN git clone --branch ${YOCTO_RELEASE} git://git.yoctoproject.org/poky
 RUN git clone --branch ${YOCTO_RELEASE} https://github.com/openembedded/meta-openembedded.git       
 RUN git clone --branch ${YOCTO_RELEASE} https://github.com/agherzan/meta-raspberrypi.git
 RUN git clone --branch ${YOCTO_RELEASE} https://github.com/rauc/meta-rauc.git
-RUN git clone --branch ${YOCTO_RELEASE} https://github.com/leon-anavi/meta-rauc-community.git
+RUN git clone -b dunfell https://github.com/leon-anavi/meta-rauc-community.git
 
 RUN source poky/oe-init-build-env /home/build
 
