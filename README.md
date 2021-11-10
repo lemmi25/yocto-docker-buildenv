@@ -23,6 +23,12 @@ $ docker exec -it <my container name> bash
 
 Build 
 
+
+Before you build make sure you copy pylon into your docker container
+```
+docker cp <location>/pylon_6.2.0.21487_aarch64_setup.tar.gz <my container name>:/home/build/downloads
+```
+
 ```
 $ source /opt/yocto/poky/oe-init-build-env /home/build
 $ bitbake core-image-minimal
@@ -37,5 +43,6 @@ docker cp <container>:/home/build/tmp/deploy/images/raspberrypi3 /path of choice
 docker ps
 bitbake -s | grep ^python3 # find python packages that can be installed
 systemctl --no-pager status hello
+docker exec -it --user root <container-id> /bin/bash
 ```
 
