@@ -1,0 +1,86 @@
+Gathering info:
+  alabaster==0.7.12
+Failed to translate license: 
+Please enter a valid license name: MIT
+  Babel==2.9.1
+  | pytz
+  certifi==2021.5.30
+  chardet==4.0.0
+  docutils==0.17.1
+  grpcio-tools==1.41.1
+  | protobuf
+Failed to translate license: 3-Clause BSD License
+Please enter a valid license name: MIT
+  | grpcio
+  |-- six
+  | setuptools
+  idna==2.10
+  ifaddr==0.1.7
+  imagesize==1.2.0
+  lxml==4.6.3
+  MarkupSafe==2.0.1
+  packaging==20.9
+Failed to translate license: BSD-2-Clause or Apache-2.0
+Please enter a valid license name: MIT
+  | pyparsing
+  protobuf==3.17.3
+  Pygments==2.9.0
+  pyparsing==2.4.7
+  pyserial==3.5
+  python-can==3.3.4
+Failed to translate license: LGPL v3
+Please enter a valid license name: MIT
+  python-docs-theme==2021.5
+  pytz==2021.1
+  requests==2.25.1
+  | urllib3
+  sila2codegenerator==0.2.0
+  | sila2lib
+  |-- wheel
+  |-- zeroconf
+  sila2comlib==0.2.0
+  sila2lib==0.2.5
+  six==1.16.0
+  snowballstemmer==2.1.0
+  urllib3==1.26.5
+  zeroconf==0.31.0
+  minimalmodbus==2.0.1
+Generating recipes:
+  python3-alabaster_0.7.12.bb
+  python3-babel_2.9.1.bb
+  python3-pytz_2021.3.bb
+  python3-certifi_2021.5.30.bb
+  python3-chardet_4.0.0.bb
+  python3-docutils_0.17.1.bb
+  python3-grpcio-tools_1.41.1.bb
+  python3-protobuf_3.19.1.bb
+  python3-grpcio_1.41.1.bb
+  python3-six_1.16.0.bb
+  python3-setuptools_58.5.3.bb
+  python3-idna_2.10.bb
+  python3-ifaddr_0.1.7.bb
+  python3-imagesize_1.2.0.bb
+  python3-lxml_4.6.3.bb
+  python3-markupsafe_2.0.1.bb
+  python3-packaging_20.9.bb
+  python3-pyparsing_3.0.5.bb
+  python3-protobuf_3.17.3.bb
+  python3-pygments_2.9.0.bb
+  python3-pyparsing_2.4.7.bb
+  python3-pyserial_3.5.bb
+  python3-python-can_3.3.4.bb
+  python3-python-docs-theme_2021.5.bb
+  python3-pytz_2021.1.bb
+  python3-requests_2.25.1.bb
+  python3-urllib3_1.26.7.bb
+  python3-sila2codegenerator_0.2.0.bb
+  python3-sila2lib_0.2.5.bb
+  python3-wheel_0.37.0.bb
+  python3-zeroconf_0.36.12.bb
+  python3-sila2comlib_0.2.0.bb
+  python3-sila2lib_0.2.5.bb
+  python3-six_1.16.0.bb
+  python3-snowballstemmer_2.1.0.bb
+  python3-urllib3_1.26.5.bb
+  python3-zeroconf_0.31.0.bb
+  python3-minimalmodbus_2.0.1.bb
