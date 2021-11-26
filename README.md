@@ -32,6 +32,10 @@ docker cp <location>/pylon_6.2.0.21487_aarch64_setup.tar.gz <my container name>:
 ```
 $ source /opt/yocto/poky/oe-init-build-env /home/build
 $ bitbake core-image-minimal
+
+or 
+
+$ bitbake core-image-base
 ```
 
 Usefull commands to copy from container to local machine
