@@ -50,3 +50,5 @@ systemctl --no-pager status hello
 docker exec -it --user root <container-id> /bin/bash
 ```
 
+Side note:
+Remember to delete requirements.txt in packages to avoide build problems
